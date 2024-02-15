@@ -52,10 +52,6 @@ def loginApi():
 
     return access_token
 
-
-print(date.fromisoformat('2023-04-12T13:22:53Z'.split("T")[0]),datetime.now().strftime('%Y-%m-%d'))
-
-
 access_token = loginApi()
 
 activities_url = f'{url}athlete/activities'
@@ -64,8 +60,5 @@ response = requests.get(activities_url, headers=headers)
 activities = response.json()
 
 if (activities[0]["moving_time"] < 900) or (date.fromisoformat(activities[0]["start_date"].split("T")[0]) != datetime.now().strftime('%Y-%m-%d')):
-    print("nul germain")
     print(activities[0]["moving_time"],"\n",date.fromisoformat(activities[0]["start_date"].split("T")[0]))
     os.popen("shutdown /s /t 0")
-else: 
-    print("bien joué germain")

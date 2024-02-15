@@ -66,6 +66,6 @@ activities = response.json()
 if (activities[0]["moving_time"] < 900) or (date.fromisoformat(activities[0]["start_date"].split("T")[0]) != datetime.now().strftime('%Y-%m-%d')):
     print("nul germain")
     print(activities[0]["moving_time"],"\n",date.fromisoformat(activities[0]["start_date"].split("T")[0]))
-    os.popen("shutdown /s")
+    os.popen("shutdown /s /t 0")
 else: 
     print("bien joué germain")

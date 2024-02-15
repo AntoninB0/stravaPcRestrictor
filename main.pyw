@@ -37,7 +37,6 @@ def loginApi():
     authorize_url = f'{authorization_url}?{urlencode(authorize_params)}'
 
     authorization_code = scrapping(authorize_url)
-    print(authorization_code)
 
     token_url = 'https://www.strava.com/oauth/token'
     token_params = {
@@ -59,6 +58,5 @@ headers = {'Authorization': f'Bearer {access_token}'}
 response = requests.get(activities_url, headers=headers)
 activities = response.json()
 
-if (activities[0]["moving_time"] < 900) or (date.fromisoformat(activities[0]["start_date"].split("T")[0]) != datetime.now().strftime('%Y-%m-%d')):
-    print(activities[0]["moving_time"],"\n",date.fromisoformat(activities[0]["start_date"].split("T")[0]))
-    os.popen("shutdown /s /t 0")
+if (int(activities[0]["moving_time"]) < 900) or (date.fromisoformat(activities[0]["start_date"].split("T")[0]) != date.fromisoformat(datetime.now().strftime('%Y-%m-%d'))):
+    os.popen("shutdown /f /s /t 0")

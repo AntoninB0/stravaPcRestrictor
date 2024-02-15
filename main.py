@@ -1,6 +1,7 @@
 from config import url, authorization_url, redirect_uri, scope, strava_id, strava_secret ,email , password
 from urllib.parse import urlencode
 import requests
+from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.common.by import By
 from selenium import webdriver
 from datetime import datetime, date
@@ -9,8 +10,9 @@ import os
 import time
 
 def scrapping(authorize_url):
-
-    driver = webdriver.Firefox()
+    firefox_options = Options()
+    firefox_options.add_argument('--headless')
+    driver = webdriver.Firefox(options=firefox_options)
     driver.get(authorize_url)
 
     driver.find_element(By.XPATH, '//*[@id="email"]').send_keys(email)

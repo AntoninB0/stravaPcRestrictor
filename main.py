@@ -3,6 +3,9 @@ from urllib.parse import urlencode
 import requests
 from selenium.webdriver.common.by import By
 from selenium import webdriver
+from datetime import datetime, date
+import os
+
 import time
 
 def scrapping(authorize_url):
@@ -15,7 +18,7 @@ def scrapping(authorize_url):
     driver.find_element(By.XPATH, '//*[@id="login-button"]').click()
     driver.find_element(By.XPATH, '//*[@id="authorize"]').click()
 
-    time.sleep(10)
+    time.sleep(5)
     redirected_url = driver.current_url
     driver.quit()
     return redirected_url.split("&")[1].replace("code=","")
@@ -48,6 +51,8 @@ def loginApi():
     return access_token
 
 
+print(date.fromisoformat('2023-04-12T13:22:53Z'.split("T")[0]),datetime.now().strftime('%Y-%m-%d'))
+
 
 access_token = loginApi()
 
@@ -56,4 +61,9 @@ headers = {'Authorization': f'Bearer {access_token}'}
 response = requests.get(activities_url, headers=headers)
 activities = response.json()
 
-print(activities[-1])
+if (activities[0]["moving_time"] < 900) or (date.fromisoformat(activities[0]["start_date"].split("T")[0]) != datetime.now().strftime('%Y-%m-%d')):
+    print("nul germain")
+    print(activities[0]["moving_time"],"\n",date.fromisoformat(activities[0]["start_date"].split("T")[0]))
+    os.popen("shutdown /s")
+else: 
+    print("bien joué germain")

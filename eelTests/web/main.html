@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Strava Pc Restrictor</title>
+        
+        <!-- Include eel.js - note this file doesn't exist in the 'web' directory -->
+        <link rel="stylesheet" href="styles/styles.css">
+        <script type="text/javascript" src="/eel.js"></script>
+        <script type="text/javascript" src="/scripts.js"></script>
+    </head>
+    
+    <body>
+        
+        <h1>Strava Pc Restrictor</h1>
+
+        <div class="form">
+
+            <div class="timeGestion">
+                <h3>Set the minimum time to start the computer</h3>
+                <input type="number" name="timeRestrict" id="timeRestrict">
+                <h3><br>Set the days where the program is active</h3>
+            </div>
+            
+            
+            <div class="divWeek">
+                <div class="day">
+                    <h3>Monday</h3>
+                    <input type="checkbox" name="Monday">
+                </div>
+
+                <div class="day">
+                    <h3>Tuesday</h3>
+                    <input type="checkbox" name="Tuesday">
+                </div>    
+
+                <div class="day">
+                    <h3>Wednesday</h3>
+                    <input type="checkbox" name="Wednesday">
+                </div>  
+
+                <div class="day">
+                    <h3>Thursday</h3>
+                    <input type="checkbox" name="Thursday">
+                </div>
+
+                <div class="day">
+                    <h3>Thursday</h3>
+                    <input type="checkbox" name="Friday">
+                </div>
+
+                <div class="day">
+                    <h3>Thursday</h3>
+                    <input type="checkbox" name="Saturday">
+                </div>
+
+                <div class="day">
+                    <h3>Thursday</h3>
+                    <input type="checkbox" name="Sunday">
+                </div>
+            </div>
+
+            <div class="stravaConnexion">
+                <div class="text">
+                    <h2>Connexion to Strava</h2>
+                </div>
+
+                <div class="connexionBox">
+                    <input type="button" value="Click here to connect">
+                </div>
+            </div>
+
+            <div class="submit">
+                <input type="button" value="Saves changes">
+            </div>
+
+
+        </div>
+    </body>
+</html>

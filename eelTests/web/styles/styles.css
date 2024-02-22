@@ -1,0 +1,79 @@
+body{
+    background-color: #FC5200;
+}
+
+h1{
+    text-align: center;
+    font-size: 50px;
+}
+
+.form{
+    display:flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 10px;
+    padding-bottom: 5vh;
+    margin-left: 3vw;
+    margin-right: 3vw;
+}
+
+.timeGestion{
+    display:flex;
+    align-self: center;
+    flex-direction: column;
+}
+
+.divWeek{
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-left: 5vw;
+    padding-right: 5vw;
+}
+.divWeek .day{
+    display:flex;
+    flex-direction: column;
+    align-self: center;
+}
+
+.stravaConnexion{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url('runner.jpg');
+    background-size: cover; /* Redimensionne l'image pour remplir la boîte */
+    background-position: center;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    margin-top: 5vh;
+    padding-bottom: 5vh;
+}
+.stravaConnexion .text{
+    color: #FC5200;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    margin-top: 5vh;
+    background-color:rgba(0, 0, 0, 0.75);
+    border-radius: 10px;
+}
+.stravaConnexion .connexionBox input{
+    background-color: #FC5200;
+    font-size: 20px;
+    padding: 3vh;
+    margin-top: 5vh;
+    border-radius: 10px;
+}
+
+.submit{
+    display:flex;
+    flex-direction: column;
+    align-self: center;
+}
+
+.submit input{
+    background-color: #FC5200;
+    font-size: 20px;
+    padding: 3vh;
+    margin-top: 5vh;
+    border-radius: 10px;
+}

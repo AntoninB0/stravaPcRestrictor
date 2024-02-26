@@ -6,7 +6,6 @@ from selenium.webdriver.common.by import By
 from selenium import webdriver
 from datetime import datetime, date
 import os
-
 import time
 
 def scrapping(authorize_url):
@@ -26,7 +25,6 @@ def scrapping(authorize_url):
     return redirected_url.split("&")[1].replace("code=","")
 
 def loginApi():
-
     authorize_params = {
         'client_id': strava_id,
         'redirect_uri': redirect_uri,
